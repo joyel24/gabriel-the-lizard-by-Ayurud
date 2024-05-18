@@ -1,4 +1,4 @@
-# gabriel-the-lizard-by-Ayurud
+# Gabriel The Lizard by Ayurud
 
 Credits to Ayurud :<br>
 https://www.youtube.com/@Ayurud <br>
