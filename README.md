@@ -1,8 +1,12 @@
 # Gabriel The Lizard by Ayurud
 
+![](https://img.itch.zone/aW1hZ2UvMjcwMTIxMS8xNjEwNDE2Ny5wbmc=/original/XgSNoz.png)
+
+![](https://img.itch.zone/aW1hZ2UvMjcwMTIxMS8xNjEwNDE3MS5wbmc=/original/T%2F6Mc%2F.png)
+
 Credits to Ayurud :<br>
 https://www.youtube.com/@Ayurud <br>
-https://discord.com/channels/359478274373451777/1239514278671941673 (https://discordapp.com/invite/3CMTSku to join server.)<br>
+https://discord.com/channels/359478274373451777/1239514278671941673 (https://discordapp.com/invite/3CMTSku to join)<br>
 https://ayurud.itch.io/gabriel-the-lizard <br>
 
 ## Original description by Ayurud:
@@ -68,6 +72,3 @@ Pendant une partie : Echap ou Select provoquera un game over pour accéder au me
 
 To my son Gabriel RONSAIN BRETON
 
-![](https://img.itch.zone/aW1hZ2UvMjcwMTIxMS8xNjEwNDE2Ny5wbmc=/original/XgSNoz.png)
-
-![](https://img.itch.zone/aW1hZ2UvMjcwMTIxMS8xNjEwNDE3MS5wbmc=/original/T%2F6Mc%2F.png)
