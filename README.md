@@ -2,7 +2,7 @@
 
 Credits to Ayurud :<br>
 https://www.youtube.com/@Ayurud <br>
-https://discord.com/channels/359478274373451777/1239514278671941673 <br>
+https://discord.com/channels/359478274373451777/1239514278671941673 (https://discordapp.com/invite/3CMTSku to join server.)<br>
 https://ayurud.itch.io/gabriel-the-lizard <br>
 
 ## Original description by Ayurud:
