@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://LizardGame/World/Spawner/SpawnerZone.gd" type="Script" id=1]
+[ext_resource path="res://LizardGame/World/Spawner/Spawner.tscn" type="PackedScene" id=2]
+
+[node name="SpawnerZone" type="ColorRect"]
+margin_right = 50.0
+margin_bottom = 50.0
+color = Color( 1, 1, 1, 0.117647 )
+script = ExtResource( 1 )
+mSpawner = ExtResource( 2 )

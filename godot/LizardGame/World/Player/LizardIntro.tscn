@@ -1,0 +1,152 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://LizardGame/World/Player/LizardIntro.gd" type="Script" id=10]
+
+[sub_resource type="Shader" id=15]
+code = "shader_type canvas_item;
+
+uniform bool whiten = false;
+uniform float mix_weight = 0.7;
+
+void fragment() {
+	vec4 texture_color = texture(TEXTURE, UV);
+	if (whiten) {
+		vec3 white = vec3(1,1,1);
+		vec3 whitened_texture_rgb = mix(texture_color.rgb, white, mix_weight);
+		COLOR = vec4(whitened_texture_rgb, texture_color.a);
+	} else {
+		COLOR = texture_color
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=16]
+shader = SubResource( 15 )
+shader_param/whiten = false
+shader_param/mix_weight = 0.7
+
+[sub_resource type="Animation" id=17]
+resource_name = "ANIM1"
+length = 10.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 620, -0.25, 0, 0.25, 0, 120, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 10 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 530, -0.25, 0, 0.25, 0, 130, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 10 )
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "ANIM2"
+length = 10.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 120, -0.25, 0, 0.25, 0, 1080, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 10 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 130, -0.25, 0, 0.25, 0, 130, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 10 )
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "ANIM3"
+length = 10.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1080, -0.25, 0, 0.25, 0, 620, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 10 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 130, -0.25, 0, 0.25, 0, 530, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 10 )
+}
+
+[sub_resource type="Animation" id=18]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 620, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 530, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[node name="LizardIntro" type="KinematicBody2D"]
+material = SubResource( 16 )
+position = Vector2( 620, 530 )
+z_as_relative = false
+collision_layer = 2
+script = ExtResource( 10 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ANIM1 = SubResource( 17 )
+anims/ANIM2 = SubResource( 19 )
+anims/ANIM3 = SubResource( 20 )
+anims/RESET = SubResource( 18 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

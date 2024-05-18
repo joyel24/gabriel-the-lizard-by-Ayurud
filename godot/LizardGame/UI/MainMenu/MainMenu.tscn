@@ -1,0 +1,600 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://LizardGame/UI/MainMenu/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://AyuLogoBeta.png" type="Texture" id=2]
+[ext_resource path="res://Fonts/Schrödinger.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://HowToPlay.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=8]
+size = 14
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="DynamicFont" id=7]
+size = 12
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "FadeIn"
+tracks/0/type = "value"
+tracks/0/path = NodePath("StageCurtain:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "FadeOut"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("StageCurtain:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("StageCurtain:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ) ]
+}
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="AyuLogoBeta" type="Sprite" parent="."]
+position = Vector2( 320, 180 )
+texture = ExtResource( 2 )
+
+[node name="HowToPlay" type="Sprite" parent="."]
+visible = false
+position = Vector2( 320, 180 )
+texture = ExtResource( 4 )
+
+[node name="Label1" type="Label" parent="HowToPlay"]
+margin_left = -125.0
+margin_top = -163.0
+margin_right = 198.0
+margin_bottom = -148.0
+custom_fonts/font = SubResource( 8 )
+text = "Collect and back the lost orbs to the altars"
+valign = 1
+
+[node name="Label2" type="Label" parent="HowToPlay"]
+margin_left = -125.0
+margin_top = -131.0
+margin_right = 120.0
+margin_bottom = -116.0
+custom_fonts/font = SubResource( 8 )
+text = "Lifes left"
+valign = 1
+
+[node name="Label3" type="Label" parent="HowToPlay"]
+margin_left = -125.0
+margin_top = -100.0
+margin_right = 42.0
+margin_bottom = -85.0
+custom_fonts/font = SubResource( 8 )
+text = "Dash left"
+valign = 1
+
+[node name="Label4" type="Label" parent="HowToPlay"]
+margin_left = -125.0
+margin_top = -68.0
+margin_right = -20.0
+margin_bottom = -53.0
+custom_fonts/font = SubResource( 8 )
+text = "Apple amount"
+valign = 1
+
+[node name="Label5" type="Label" parent="HowToPlay"]
+margin_left = -125.0
+margin_top = -37.0
+margin_right = -93.0
+margin_bottom = -22.0
+custom_fonts/font = SubResource( 8 )
+text = "Move (W or Z QSD ; Keyboard arrows ; Left Stick ; Dpad)"
+valign = 1
+
+[node name="Label6" type="Label" parent="HowToPlay"]
+margin_left = -125.0
+margin_top = -4.0
+margin_right = 242.0
+margin_bottom = 11.0
+custom_fonts/font = SubResource( 8 )
+text = "Tongue attack (1 on Numpad ; P ; Gamepad X)"
+valign = 1
+
+[node name="Label7" type="Label" parent="HowToPlay"]
+margin_left = -125.0
+margin_top = 53.0
+margin_right = 137.0
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 8 )
+text = "Hit trunk to drop apple (tree's color is a reload indicator)"
+valign = 1
+
+[node name="Label8" type="Label" parent="HowToPlay"]
+margin_left = -125.0
+margin_top = 109.0
+margin_right = 256.0
+margin_bottom = 124.0
+custom_fonts/font = SubResource( 8 )
+text = "Spit apple as fireball (2 on Numpad ; O ; Gamepad Y)"
+valign = 1
+
+[node name="Label9" type="Label" parent="HowToPlay"]
+margin_left = -125.0
+margin_top = 145.0
+margin_right = 256.0
+margin_bottom = 160.0
+custom_fonts/font = SubResource( 8 )
+text = "Dash to avoid attacks (0 on Numpad ; I ; Gamepad A)"
+valign = 1
+
+[node name="MenuContainer" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Title" type="Label" parent="MenuContainer"]
+margin_left = 12.0
+margin_top = 40.0
+margin_right = 471.0
+margin_bottom = 73.0
+custom_colors/font_color = Color( 0.490196, 0.0588235, 0.862745, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+custom_fonts/font = SubResource( 4 )
+text = "HighScore"
+
+[node name="Menu1" type="VBoxContainer" parent="MenuContainer"]
+margin_left = 320.0
+margin_top = 200.0
+margin_right = 360.0
+margin_bottom = 240.0
+
+[node name="Start" type="Button" parent="MenuContainer/Menu1"]
+margin_right = 139.0
+margin_bottom = 17.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0.682353, 0.466667, 0.866667, 1 )
+custom_colors/font_color = Color( 0.490196, 0.0588235, 0.862745, 1 )
+custom_colors/font_color_pressed = Color( 0.811765, 0.827451, 0.533333, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+text = "Start the game"
+align = 0
+
+[node name="HighScore" type="Button" parent="MenuContainer/Menu1"]
+margin_top = 21.0
+margin_right = 139.0
+margin_bottom = 38.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0.682353, 0.466667, 0.866667, 1 )
+custom_colors/font_color = Color( 0.490196, 0.0588235, 0.862745, 1 )
+custom_colors/font_color_pressed = Color( 0.811765, 0.827451, 0.533333, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+text = "High score"
+align = 0
+
+[node name="TimeScore" type="Button" parent="MenuContainer/Menu1"]
+margin_top = 42.0
+margin_right = 139.0
+margin_bottom = 59.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0.682353, 0.466667, 0.866667, 1 )
+custom_colors/font_color = Color( 0.490196, 0.0588235, 0.862745, 1 )
+custom_colors/font_color_pressed = Color( 0.811765, 0.827451, 0.533333, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+text = "Time score"
+align = 0
+
+[node name="How" type="Button" parent="MenuContainer/Menu1"]
+margin_top = 63.0
+margin_right = 139.0
+margin_bottom = 80.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0.682353, 0.466667, 0.866667, 1 )
+custom_colors/font_color = Color( 0.490196, 0.0588235, 0.862745, 1 )
+custom_colors/font_color_pressed = Color( 0.811765, 0.827451, 0.533333, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+text = "How to play"
+align = 0
+
+[node name="Options" type="Button" parent="MenuContainer/Menu1"]
+margin_top = 84.0
+margin_right = 139.0
+margin_bottom = 101.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0.682353, 0.466667, 0.866667, 1 )
+custom_colors/font_color = Color( 0.490196, 0.0588235, 0.862745, 1 )
+custom_colors/font_color_pressed = Color( 0.811765, 0.827451, 0.533333, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+text = "Options"
+align = 0
+
+[node name="Quit" type="Button" parent="MenuContainer/Menu1"]
+margin_top = 105.0
+margin_right = 139.0
+margin_bottom = 122.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0.682353, 0.466667, 0.866667, 1 )
+custom_colors/font_color = Color( 0.490196, 0.0588235, 0.862745, 1 )
+custom_colors/font_color_pressed = Color( 0.811765, 0.827451, 0.533333, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+text = "Quit the game"
+align = 0
+
+[node name="MenuHighScore" type="VBoxContainer" parent="MenuContainer"]
+visible = false
+margin_left = 255.0
+margin_top = 110.0
+margin_right = 382.0
+margin_bottom = 288.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuContainer/MenuHighScore"]
+margin_right = 127.0
+margin_bottom = 157.0
+
+[node name="No" type="Label" parent="MenuContainer/MenuHighScore/HBoxContainer"]
+margin_right = 18.0
+margin_bottom = 157.0
+custom_fonts/font = SubResource( 7 )
+text = "1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10."
+align = 2
+
+[node name="Names" type="Label" parent="MenuContainer/MenuHighScore/HBoxContainer"]
+margin_left = 22.0
+margin_right = 65.0
+margin_bottom = 157.0
+custom_fonts/font = SubResource( 7 )
+text = "Gabriel
+Gabriel
+Gabriel
+Gabriel
+Gabriel
+Gabriel
+Gabriel
+Gabriel
+Gabriel
+Gabriel"
+
+[node name="Separators" type="Label" parent="MenuContainer/MenuHighScore/HBoxContainer"]
+margin_left = 69.0
+margin_right = 75.0
+margin_bottom = 157.0
+custom_fonts/font = SubResource( 7 )
+text = " 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+"
+
+[node name="Scores" type="Label" parent="MenuContainer/MenuHighScore/HBoxContainer"]
+margin_left = 79.0
+margin_right = 127.0
+margin_bottom = 157.0
+custom_fonts/font = SubResource( 7 )
+text = "999 999
+999 999
+999 999
+999 999
+999 999
+999 999
+999 999
+999 999
+999 999
+999 999"
+align = 2
+
+[node name="BackHighscore" type="Button" parent="MenuContainer/MenuHighScore"]
+margin_top = 161.0
+margin_right = 127.0
+margin_bottom = 178.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0.682353, 0.466667, 0.866667, 1 )
+custom_colors/font_color = Color( 0.490196, 0.0588235, 0.862745, 1 )
+custom_colors/font_color_pressed = Color( 0.811765, 0.827451, 0.533333, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+text = "Back"
+
+[node name="MenuTimeScore" type="VBoxContainer" parent="MenuContainer"]
+visible = false
+margin_left = 255.0
+margin_top = 110.0
+margin_right = 382.0
+margin_bottom = 288.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuContainer/MenuTimeScore"]
+margin_right = 127.0
+margin_bottom = 157.0
+
+[node name="No" type="Label" parent="MenuContainer/MenuTimeScore/HBoxContainer"]
+margin_right = 18.0
+margin_bottom = 157.0
+custom_fonts/font = SubResource( 7 )
+text = "1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10."
+align = 2
+
+[node name="Names" type="Label" parent="MenuContainer/MenuTimeScore/HBoxContainer"]
+margin_left = 22.0
+margin_right = 65.0
+margin_bottom = 157.0
+custom_fonts/font = SubResource( 7 )
+text = "Gabriel
+Gabriel
+Gabriel
+Gabriel
+Gabriel
+Gabriel
+Gabriel
+Gabriel
+Gabriel
+Gabriel"
+
+[node name="Separators" type="Label" parent="MenuContainer/MenuTimeScore/HBoxContainer"]
+margin_left = 69.0
+margin_right = 75.0
+margin_bottom = 157.0
+custom_fonts/font = SubResource( 7 )
+text = " 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+"
+
+[node name="Scores" type="Label" parent="MenuContainer/MenuTimeScore/HBoxContainer"]
+margin_left = 79.0
+margin_right = 127.0
+margin_bottom = 157.0
+custom_fonts/font = SubResource( 7 )
+text = "999 999
+999 999
+999 999
+999 999
+999 999
+999 999
+999 999
+999 999
+999 999
+999 999"
+align = 2
+
+[node name="BackTimeScore" type="Button" parent="MenuContainer/MenuTimeScore"]
+margin_top = 161.0
+margin_right = 127.0
+margin_bottom = 178.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0.682353, 0.466667, 0.866667, 1 )
+custom_colors/font_color = Color( 0.490196, 0.0588235, 0.862745, 1 )
+custom_colors/font_color_pressed = Color( 0.811765, 0.827451, 0.533333, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+text = "Back"
+
+[node name="MenuOptions" type="VBoxContainer" parent="MenuContainer"]
+visible = false
+margin_left = 255.0
+margin_top = 110.0
+margin_right = 382.0
+margin_bottom = 288.0
+
+[node name="ShowLScore" type="Button" parent="MenuContainer/MenuOptions"]
+margin_right = 199.0
+margin_bottom = 17.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0.682353, 0.466667, 0.866667, 1 )
+custom_colors/font_color = Color( 0.490196, 0.0588235, 0.862745, 1 )
+custom_colors/font_color_pressed = Color( 0.811765, 0.827451, 0.533333, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+text = "Show Local Score : OFF"
+align = 0
+
+[node name="ShowGScore" type="Button" parent="MenuContainer/MenuOptions"]
+margin_top = 21.0
+margin_right = 199.0
+margin_bottom = 38.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0.682353, 0.466667, 0.866667, 1 )
+custom_colors/font_color = Color( 0.490196, 0.0588235, 0.862745, 1 )
+custom_colors/font_color_pressed = Color( 0.811765, 0.827451, 0.533333, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+text = "Show Global Score : OFF"
+align = 0
+
+[node name="ShowTimer" type="Button" parent="MenuContainer/MenuOptions"]
+margin_top = 42.0
+margin_right = 199.0
+margin_bottom = 59.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0.682353, 0.466667, 0.866667, 1 )
+custom_colors/font_color = Color( 0.490196, 0.0588235, 0.862745, 1 )
+custom_colors/font_color_pressed = Color( 0.811765, 0.827451, 0.533333, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+text = "Show game timer : OFF"
+align = 0
+
+[node name="BackOptions" type="Button" parent="MenuContainer/MenuOptions"]
+margin_top = 63.0
+margin_right = 199.0
+margin_bottom = 80.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0.682353, 0.466667, 0.866667, 1 )
+custom_colors/font_color = Color( 0.490196, 0.0588235, 0.862745, 1 )
+custom_colors/font_color_pressed = Color( 0.811765, 0.827451, 0.533333, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+text = "Back"
+
+[node name="MenuHowToPlay" type="VBoxContainer" parent="MenuContainer"]
+visible = false
+margin_left = 540.0
+margin_top = 330.0
+margin_right = 680.0
+margin_bottom = 508.0
+
+[node name="BackHowToPlay" type="Button" parent="MenuContainer/MenuHowToPlay"]
+margin_top = 161.0
+margin_right = 127.0
+margin_bottom = 178.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0.682353, 0.466667, 0.866667, 1 )
+custom_colors/font_color = Color( 0.490196, 0.0588235, 0.862745, 1 )
+custom_colors/font_color_pressed = Color( 0.811765, 0.827451, 0.533333, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+text = "Back"
+
+[node name="StageCurtain" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeIn = SubResource( 3 )
+anims/FadeOut = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+
+[connection signal="pressed" from="MenuContainer/Menu1/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="MenuContainer/Menu1/HighScore" to="." method="_on_HighScore_pressed"]
+[connection signal="pressed" from="MenuContainer/Menu1/TimeScore" to="." method="_on_TimeScore_pressed"]
+[connection signal="pressed" from="MenuContainer/Menu1/How" to="." method="_on_How_pressed"]
+[connection signal="pressed" from="MenuContainer/Menu1/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="MenuContainer/Menu1/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="MenuContainer/MenuHighScore/BackHighscore" to="." method="_on_BackHighscore_pressed"]
+[connection signal="pressed" from="MenuContainer/MenuTimeScore/BackTimeScore" to="." method="_on_BackTimeScore_pressed"]
+[connection signal="pressed" from="MenuContainer/MenuOptions/ShowLScore" to="." method="_on_ShowLScore_pressed"]
+[connection signal="pressed" from="MenuContainer/MenuOptions/ShowGScore" to="." method="_on_ShowGScore_pressed"]
+[connection signal="pressed" from="MenuContainer/MenuOptions/ShowTimer" to="." method="_on_ShowTimer_pressed"]
+[connection signal="pressed" from="MenuContainer/MenuOptions/BackOptions" to="." method="_on_BackOptions_pressed"]
+[connection signal="pressed" from="MenuContainer/MenuHowToPlay/BackHowToPlay" to="." method="_on_BackHowToPlay_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
